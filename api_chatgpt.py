@@ -1,6 +1,6 @@
 import openai
 import os
-openai.api_key = "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"
+openai.api_key = "..."
 # prompt = open("data/prompt_1.txt", "r").read().strip("\n")
 
 def predict(input_message, prompt):
