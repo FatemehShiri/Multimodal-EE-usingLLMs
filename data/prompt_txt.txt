@@ -1,0 +1,27 @@
+prompt_txt = [{"role": "user", "content": """Task Description
+This is an event extraction task where the goal is to extract structured events from the input text. A structured event contains an event trigger word and an event type.
+
+Event types and their definitions
+Contact.Meet: A MEET Event occurs when two or more people interact with one another face-to-face at a single location.
+Life.Die: A DIE Event occurs when the life of a PERSON Entity ends.
+Conflict.Demonstrate: A DEMONSTRATE Event occurs when a large number of people come together in a public area to protest or demand some sort of official action.
+Movement.Transport: A TRANSPORT Event occurs when an ARTIFACT or a PERSON is moved from one PLACE to another.
+Transaction.Transfer-Money: TRANSFER-MONEY Events refer to the giving, receiving, borrowing, or lending money.
+Conflict.Attack: An ATTACK Event is defined as a violent physical act causing harm or damage.
+Contact.Phone-Write: A PHONE-WRITE Event occurs when two or more people directly engage in discussion but not face-to-face.
+Justice.Arrest-Jail: A ARREST-JAIL Event occurs when the movement of a PERSON is constrained by a state actor.
+
+Examples
+Input: Protesters listen to a speaker as they gather for the Women's March against President Donald Trump, Jan. 21, 2017, in Los Angeles."""},
+{"role": "assistant", "content": "Output: [{'trigger': 'gather', 'event_type': 'Conflict.Demonstrate'}]"},
+{"role": "user", "content": "Input: Attacks in Turkey-Turkey has seen a sharp spike in clashes between security forces and Kurdish rebels in recent weeks."},
+{"role": "assistant", "content": "Output: [{'trigger': 'Attacks', 'event_type': 'Conflict.Attack'}]"},
+{"role": "user", "content": "Input: He was then flown to Moroto town in the northeastern subregion of Karamoja."},
+{"role": "assistant", "content": "Output: [{'trigger': 'flown', 'event_type': 'Movement.Transport'}]"},
+{"role": "user", "content": "Input: Ugandan Ex-Supreme Court Justice Questions Besigye Treason Charge-A former Uganda Supreme Court justice says the government and police need to explain a treason charge against jailed opposition leader Kizza Besigye, who was arrested last week."},
+{"role": "assistant", "content": "Output: [{'trigger': 'arrested', 'event_type': 'Justice.Arrest-Jail'}]},
+{"role": "user", "content": "Input: Three Ibama officials in Santarem were charged last month with taking bribes from logging companies."},
+{"role": "assistant", "content": "Output: [{'trigger': 'bribes', 'event_type':'Transaction.Transfer-Money'}]"},
+{"role": "user", "content": "Input: Very few North Koreans have Internet access, but foreign residents and visitors previously have been able to access web pages with almost no overt restrictions."},
+{"role": "assistant", "content": "Output: [{'trigger': 'phone', 'event_type': 'Contact.Phone-Write'}]"}]
+
